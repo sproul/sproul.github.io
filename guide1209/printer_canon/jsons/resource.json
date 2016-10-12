@@ -1,0 +1,400 @@
+﻿var resource = [
+	// --------------------------------------------------------------------------------------------
+	// HEADER
+	// --------------------------------------------------------------------------------------------
+	{
+		id:		"title",
+		value:	"e-Manual"
+	},{
+		id:		"home",
+		value:	"Top"
+	},{
+		id:		"contents",
+		value:	"Contents"
+	},{
+		id:		"sitemap",
+		value:	"Site Map"
+	},{
+		id:		"search",
+		value:	"Search"
+	},{
+		id:		"help",
+		value:	"Help"
+	},{
+		id:		"bar_icon_print",
+		value:	"Print<img src=\"../frame_images/bar_icon_print.png\" title=\"Print this topic\" />"
+	},{
+		id:	"product_name",
+		value:	"imageCLASS MF229dw/MF227dw/MF217w/MF216n"
+
+	// --------------------------------------------------------------------------------------------
+	// FOOTER
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"copy_right",
+		value:	"Copyright CANON INC. 2015"
+	},{
+		id:		"notice",
+		value:	"Notice"
+	},{
+		id:		"contact",
+		value:	"Office Locations"
+	},{
+		id:		"pub_number",
+		value:	"USRM2-4785-01"
+	// --------------------------------------------------------------------------------------------
+	// NAV
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"print_all",
+		value:	"Print all"
+	},{
+		id:		"print_instructions",
+		value:	"Print this page with browser's [Print] menu."
+	},{
+		id:		"close_toc_all",
+		value:	"Collapse All"
+	},{
+		id:		"open_toc_all",
+		value:	"Expand All"
+	},{
+		id:		"bar_icon_previous",
+		value:	"<img src=\"../frame_images/bar_icon_prev.png\" title=\"Go to the previous topic\" />"
+	},{
+		id:		"bar_icon_next",
+		value:	"<img src=\"../frame_images/bar_icon_next.png\" title=\"Go to the next topic\" />"
+
+	// --------------------------------------------------------------------------------------------
+	// SITEMAP
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"contents_link_prev",
+		value:	"Previous"
+	},{
+		id:		"contents_link_next",
+		value:	"Next"
+
+	// --------------------------------------------------------------------------------------------
+	// SEARCH
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"search_options_show",
+		value:	"Search options"
+	},{
+		id:		"search_options_hide",
+		value:	"Search options"
+	},{
+		id:		"search_options_case",
+		value:	"Case sensitive"
+	},{
+		id:		"search_options_multibyte",
+		value:	"Differentiate between one-byte and two-byte"
+	},{
+		id:		"search_options_search_scope_all",
+		value:	"Search all chapters"
+	},{
+		id:		"search_prev",
+		value:	"« Prev"
+	},{
+		id:		"search_next",
+		value:	"Next »"
+	},{
+		id:		"search_found",
+		value:	"item(s)"
+	},{
+		id:		"search_options_search_scope_chapter",
+		value:	"Search from below chapters"
+	},{
+		id:		"enter_search_keyword",
+		value:	"Enter keyword(s) here"
+	},{
+		id:		"search_button",
+		value:	"Search with these conditions"
+	},{
+		id:		"search_glossary",
+		value:	"Search topics using this terminology..."
+	},{
+		id:		"search_glossary_not_found",
+		value:	"No topics found."
+	},{
+		id:		"search_result_item",
+		value:	"Result: "
+
+	// --------------------------------------------------------------------------------------------
+	// GROUP
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"FAQ",
+		value:	"Quick Help"
+	},{
+		id:		"troubleshooting",
+		value:	"Troubleshooting"
+
+	// --------------------------------------------------------------------------------------------
+	// CATEGORY
+	// --------------------------------------------------------------------------------------------
+	},{
+		id:		"ts_1",
+		value:	"Common Problems"
+	},{
+		id:		"ts_2",
+		value:	"When an error message appears"
+	},{
+		id:		"ts_3",
+		value:	"When an error code (#xxx) appears"
+	},{
+		id:		"ts_4",
+		value:	"How to install the driver software"
+	},{
+		id:		"ts_5",
+		value:	"How to connect the telephone line"
+	},{
+		id:		"ts_6",
+		value:	"Cannot send or receive faxes"
+	},{
+		id:		"ts_7",
+		value:	"Cannot print documents"
+	},{
+		id:		"ts_8",
+		value:	"Cannot connect the machine to a networked computer"
+	},{
+		id:		"ts_9",
+		value:	"How to scan your documents to a computer"
+	},{
+		id:		"mainte",
+		value:	"Maintenance"
+	},{
+		id:		"trouble",
+		value:	"Troubleshooting"
+	},{
+		id:		"theme_01",
+		value:	"Going Green and Saving Money"
+	},{
+		id:		"theme_02",
+		value:	"Improving Efficiency"
+	},{
+		id:		"theme_03",
+		value:	"Going Digital"
+	},{
+		id:		"theme_04",
+		value:	"So Much More"
+	},{
+		id:  "mac",
+  		value: "For Mac OS Users"
+	}
+];
+var link = [
+	// --------------------------------------------------------------------------------------------
+	// HEADER
+	// --------------------------------------------------------------------------------------------
+	{
+		link_name:"home",
+		link_target:"_self",
+		link_href:"../frame_htmls/home.html"
+	},{
+		link_name:"sitemap",
+		link_target:"_self",
+		link_href:"../frame_htmls/contents.html"
+	},{
+		link_name:"help",
+		link_target:"_self"
+
+	// --------------------------------------------------------------------------------------------
+	// MAIN
+	// --------------------------------------------------------------------------------------------
+	},{
+		link_name:"ts_1",
+		link_target:"_self"
+	},{
+		link_name:"ts_2",
+		link_target:"_self"
+	},{
+		link_name:"ts_3",
+		link_target:"_self"
+	},{
+		link_name:"ts_4",
+		link_target:"_blank",
+		link_href:"../Inst_source/index.html"
+	},{
+		link_name:"ts_5",
+		link_target:"_self"
+	},{
+		link_name:"ts_6",
+		link_target:"_self"
+	},{
+		link_name:"ts_7",
+		link_target:"_self"
+	},{
+		link_name:"ts_8",
+		link_target:"_self"
+	},{
+		link_name:"ts_9",
+		link_target:"_self"
+	},{
+		link_name:"mainte",
+		link_target:"_self"
+	},{
+		link_name:"trouble",
+		link_target:"_self"
+ 	},{
+		link_name:"route_map_1",
+		link_href:"../pdfs/route_map.pdf"
+	},{
+　		link_name:"mac",
+		link_target:"_self"
+	},{
+　		link_name:"gengreen",
+		link_target:"_blank",
+		link_href:"http://www.usa.canon.com/app/html/GenerationGreen/index.html"
+	},{
+		link_name:"theme_01",
+		link_target:"_self"
+	},{
+		link_name:"theme_02",
+		link_target:"_self"
+	},{
+		link_name:"theme_03",
+		link_target:"_self"
+	},{
+		link_name:"theme_04",
+		link_target:"_self"
+
+	// --------------------------------------------------------------------------------------------
+	// FOOTER
+	// --------------------------------------------------------------------------------------------
+	},{
+		link_name:"notice",
+		link_target:"_self",
+		link_resource:"notice",
+		link_href:""
+	},{
+		link_name:"contact",
+		link_target:"canon_sub_window",
+		link_resource:"contact",
+		link_href:""
+	}
+];
+var header = "home,sitemap,help,print";
+var footer = "notice,contact";
+var constant = [
+	{
+		/* Remove "//" below to specify the language code. Simplified Chinese must be specified as "zh-CN". Traditional Chinese must be specified as "zh-TW". */
+		//lang_code:					"en",
+		search_show_around:			50,
+		search_show_result_count:	10,
+		search_page_max_range:		5,
+		search_help:				"search",
+		search_option_multibyte:	0,	// [0|1]
+		join_chapters:				0,	// [0|1]
+		markup_glossary:			0,	// [0|1]
+		link_to_top:				0	// [0|1]
+	}
+];
+var link_to_top_title = [
+	{
+	lang:		"ja",
+		title:		"このページのトップへ"
+	},{
+		lang:		"en",
+		title:		"Back to Top"
+	},{
+		lang:		"fr",
+		title:		"Haut de page"
+	},{
+		lang:		"it",
+		title:		"Torna all'inizio"
+	},{
+		lang:		"de",
+		title:		"Zurück zum Seitenanfang"
+	},{
+		lang:		"es",
+		title:		"Volver al principio"
+	},{
+		lang:		"ko",
+		title:		"맨 위로 이동"
+	},{
+		lang:		"zh-CN",
+		title:		"返回首行"
+	},{
+		lang:		"zh-TW",
+		title:		"移至首行"
+	},{
+		lang:		"pt",
+		title:		"Voltar ao Topo"
+	},{
+		lang:		"ca",
+		title:		"Tornar al principi"
+	},{
+		lang:		"cs",
+		title:		"Zpět na začátek"
+	},{
+		lang:		"da",
+		title:		"Tilbage til toppen"
+	},{
+		lang:		"fi",
+		title:		"Takaisin ylös"
+	},{
+		lang:		"nl",
+		title:		"Terug naar boven"
+	},{
+		lang:		"pl",
+		title:		"Powrót do góry"
+	},{
+		lang:		"pt",
+		title:		"Voltar ao início"
+	},{
+		lang:		"ru",
+		title:		"В начало"
+	},{
+		lang:		"sv",
+		title:		"Tillbaka till början"
+	},{
+		lang:		"default",
+		title:		"Back to Top"
+	}
+];
+var cover = [
+	{
+		cover_name:"safety",
+		cover_title:"Important Safety Instructions"
+	},{
+		cover_name:"basic",
+		cover_title:"Basic Operations"
+	},{
+		cover_name:"spec",
+		cover_title:"Specifications"
+	},{
+		cover_name:"copy",
+		cover_title:"Copying"
+	},{
+		cover_name:"fax",
+		cover_title:"Faxing"
+	},{
+		cover_name:"prt",
+		cover_title:"Using the Machine as a Printer"
+	},{
+		cover_name:"scan",
+		cover_title:"Using the Machine as a Scanner"
+	},{
+		cover_name:"nw",
+		cover_title:"Network"
+	},{
+		cover_name:"sec",
+		cover_title:"Security"
+	},{
+		cover_name:"rui",
+		cover_title:"Using Remote UI"
+	},{
+		cover_name:"menu",
+		cover_title:"Setting Menu List"
+	},{
+		cover_name:"trouble",
+		cover_title:"Troubleshooting"
+	},{
+		cover_name:"mainte",
+		cover_title:"Maintenance"
+	},{
+		cover_name:"others",
+		cover_title:"Appendix"
+	}
+];
