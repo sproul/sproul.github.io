@@ -1060,14 +1060,6 @@ window.onload = function fncOnLoad() {
 
 		// IE6・7と互換モードでは、<a>要素のマークをCSSではなく実画像で配置するようにする
 		// リンク文字列が2行に渡った場合にマーク位置が崩れることを避けるため
-		if ($.browser.msie && parseInt($.browser.version) == 6) {
-			$("#id_content a[href!=''], div.child_window a[href!='']").css({background: "none", paddingLeft: 0});
-			$("#id_content a[href!=''], div.child_window a[href!='']").prepend("<img class=\"link\" src=\"" + strStylePath + "style_a.png\" />");
-		} else if ($.browser.msie && parseInt($.browser.version) == 7) {
-			// NOTE: ie7 a[href!=''] does not work
-			$("#id_content a:parent, div.child_window a:parent").css({background: "none", paddingLeft: 0});
-			$("#id_content a:parent, div.child_window a:parent").prepend("<img alt=\"\" title=\"\" class=\"link\" src=\"" + strStylePath + "style_a.png\" />");
-		}
 		$("div.child_window div.child_link_to_top a").css({
 			background: "url(" + strStylePath + "style_child_link_to_top.png) No-Repeat 0 50%",
 			paddingLeft: "18px"
@@ -1089,44 +1081,17 @@ window.onload = function fncOnLoad() {
 
 		// IE6・7、互換モードでは手順番号が飛び出してしまう現象を避ける
 		// また、幅指定がWeb編集時に支障をきたすので、CSSではなくここで設定
-		if ($.browser.msie && parseInt($.browser.version) == 6) {
-			$("div.step_number").css({position: "Absolute", marginLeft: "-10px", width: "50px", textAlign: "Right", zIndex: 1}); // NOTE: For web edit
-			$("div.invisible div.step_number").css({marginLeft: "-20px"}); // NOTE: For web edit
-		} else if ($.browser.msie && parseInt($.browser.version) == 7) {
-
-			// ie7
-			if (!document.documentMode) {
-				//$("div.step_number").before("<div> </div>"); // 手順の前に折りたたみがあると手順番号の横位置が右にずれる問題を回避 →　折りたたみを展開すると数字の縦位置がずれる
-				//$("div.step_number").css({position: "Absolute", marginLeft: "-15px", width: "50px", textAlign: "Right", zIndex: 1}); // NOTE: For web edit
-				// ie7の場合、Absoluteにすると複数ページ印刷時に手順番号がページ左上に配置されてしまう。
-				$("div.step_text").css({marginTop: "-2em"});
-				$("div.step_number").css({marginLeft: "5px"});
-				$("div.step_number_fixer").css({border: "0"});
-				$("div.invisible div.step_number").css({marginLeft: "-15px"}); // NOTE: For web edit
-
-			// 互換モード
-			} else {
-				$("div.step_number").css({position: "Absolute", marginLeft: "-20px", width: "50px", textAlign: "Right", zIndex: 1}); // NOTE: For web edit
-				$("div.invisible div.step_number").css({marginLeft: "-40px"}); // NOTE: For web edit
-			}
-		} else {
-			$("div.step_number").css({position: "Absolute", marginLeft: "-20px", width: "50px", textAlign: "Right", zIndex: 1}); // NOTE: For web edit
-			$("div.invisible div.step_number").css({marginLeft: "-40px"}); // NOTE: For web edit
-		}
+		$("div.step_number").css({position: "Absolute", marginLeft: "-20px", width: "50px", textAlign: "Right", zIndex: 1}); // NOTE: For web edit
+		$("div.invisible div.step_number").css({marginLeft: "-40px"}); // NOTE: For web edit
 
 		// 上付き文字の幅指定はWeb編集時に支障をきたすので、CSSではなくここで設定
-		if (	($.browser.msie && parseInt($.browser.version) == 6)
-		) {
-			// NOTE: ie6はinline-block使用できないので対象外とする
-		} else {
-			$("div.annotation span.superscript").each(function() {
+		$("div.annotation span.superscript").each(function() {
 
 				// 先頭のsuperscriptのみに適用
 				if ($(this)[0].parentNode.firstChild === $(this)[0]) {
 					$(this).css({width: "1.5em", display: "Inline-Block", textAlign: "Right", marginLeft: "-2px", position: "Relative"});
 				}
 			});
-		}
 
 		// --------------------------------------------------------------------------------------------
 		// 左ペインの幅切り替え
@@ -1431,41 +1396,16 @@ function fncOpenCloseNextSibling(img, iOffsetLeft) {
 			// 左位置情報を引数から取得
 			target.style.marginLeft = iOffsetLeft;
 
-			// IE678では処理を簡略化
-			if (	($.browser.msie && parseInt($.browser.version) == 6)
-				||	($.browser.msie && parseInt($.browser.version) == 7)
-				||	($.browser.msie && parseInt($.browser.version) == 8)
-			) {
-				if (img.src.indexOf("g_ne_toggle_open") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_close.gif";
-					jQuery(target).css({display: "block"});
-				} else if (img.src.indexOf("g_ne_toggle_close") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_open.gif";
-					jQuery(target).css({display: "none"});
-				} else if (img.src.indexOf("g_ne_toggle_en_open") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_en_close.png";
-					jQuery(target).css({display: "block"});
-				} else if (img.src.indexOf("g_ne_toggle_en_close") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_en_open.png";
-					jQuery(target).css({display: "none"});
-				}
-				fncAdjustColumnHeight();
-				// ie6で上付き文字が折り畳み展開直後だけ位置が崩れてしまう現象を防ぐ
-				if ($.browser.msie && parseInt($.browser.version) == 6) {
-					$("span.superscript").css({left: "0"});
-				}
-			} else {
-				// jQueryによるアニメーション効果とスイッチ画像の切り替え
-				jQuery(target).slideToggle(500, fncAdjustColumnHeight);
-				if (img.src.indexOf("g_ne_toggle_open") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_close.gif";
-				} else if (img.src.indexOf("g_ne_toggle_close") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_open.gif";
-				} else if (img.src.indexOf("g_ne_toggle_en_open") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_en_close.png";
-				} else if (img.src.indexOf("g_ne_toggle_en_close") != -1) {
-					img.src = strSrcPath + "g_ne_toggle_en_open.png";
-				}
+			// jQueryによるアニメーション効果とスイッチ画像の切り替え
+			jQuery(target).slideToggle(500, fncAdjustColumnHeight);
+			if (img.src.indexOf("g_ne_toggle_open") != -1) {
+				img.src = strSrcPath + "g_ne_toggle_close.gif";
+			} else if (img.src.indexOf("g_ne_toggle_close") != -1) {
+				img.src = strSrcPath + "g_ne_toggle_open.gif";
+			} else if (img.src.indexOf("g_ne_toggle_en_open") != -1) {
+				img.src = strSrcPath + "g_ne_toggle_en_close.png";
+			} else if (img.src.indexOf("g_ne_toggle_en_close") != -1) {
+				img.src = strSrcPath + "g_ne_toggle_en_open.png";
 			}
 
 			// 開閉後に「トップに戻る」タブの縦位置がずれることを防ぐ
@@ -2000,20 +1940,7 @@ function fncMarkupText(element, arrSearchText, strSearchOptionCaseSensitive, bWo
 }
 function blink(target) {
 	try {
-		//$(target).fadeOut('fast', 'swing').fadeIn('fast', 'swing');
-		if (	($.browser.msie && parseInt($.browser.version) == 6)
-			||	($.browser.msie && parseInt($.browser.version) == 7)
-			||	($.browser.msie && parseInt($.browser.version) == 8)
-			||	($.browser.mozilla)
-		) {
-			if (target.style.visibility == "hidden") {
-				target.style.visibility = "visible";
-			} else {
-				target.style.visibility = "hidden";
-			}
-		} else {
-			$(target).fadeOut(100).fadeIn(100);
-		}
+		$(target).fadeOut(100).fadeIn(100);
 		//$(target).toggle();
 	} catch (e) {
 	}
@@ -2300,7 +2227,7 @@ function fncStrechToc() {
 		var nGap = 0;
 
 		// 初回スタブを作成
-		if ($("li#stub").size() == 0) {
+		if ($("li#stub").length == 0) {
 			var objStub = document.createElement("li");
 			objStub.id = "stub";
 			$("#id_toc").append(objStub);

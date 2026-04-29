@@ -2114,17 +2114,13 @@ if (!Array.indexOf) {
 
 function fncBounce() {
 	try {
-		if ($("#id_search_bouncer").size() == 0) {			// li#stub が存在しないなら
+		if ($("#id_search_bouncer").length == 0) {			// li#stub が存在しないなら
 			var objBouncer = document.createElement("div");
 			objBouncer.id = "id_search_bouncer";
 			$("#id_panel_search").append(objBouncer);
 		}
 		$("#id_search_bouncer").css({height: 0});
-		if ($.browser.msie && parseInt($.browser.version) == 9) {
-			var nGapSearch = $("#id_right").height() - $("#id_panel_search").height() - 40;
-		} else {
-			var nGapSearch = $("#id_right").height() - $("#id_panel_search").height() - 20;
-		}
+		var nGapSearch = $("#id_right").height() - $("#id_panel_search").height() - 20;
 		if (nGapSearch < 0) {
 			nGapSearch = 0;
 		}
